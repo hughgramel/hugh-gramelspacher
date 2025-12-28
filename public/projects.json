@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "id": "readfluent",
+      "name": "ReadFluent",
+      "url": "https://read-fluent.vercel.app/",
+      "description": "AI-powered language learning app with EPUB support. Read books in your target language with instant translations and vocabulary tracking.",
+      "review": "This project was extremely fun because I got to use it myself pretty consistently, which really drove my progress. It came from a need for a tool that Migaku, one of the language learning apps I used, didn't have: a reader. I made an app that works on your phone or computer and takes EPUBs or other formats like Markdown and text. It shows which words are marked as known, tracking, or unknown. When you click on a word you can save the sentence, use AI to see the definition in context, use the Wiktionary definition if you don't want to use AI, or get a sentence explanation. It taught me a lot about rate limiting, working with Wiktionary, converting and saving EPUBs, and using AI integrations like Gemini. I plan on continuing this project soon, integrating it with YouTube, and releasing it since its main alternatives, Migaku and LingQ, are paid tools.",
+      "images": []
+    },
+    {
+      "id": "ambira",
+      "name": "Ambira",
+      "url": "https://github.com/AmbiraDev/ambira-web",
+      "description": "Social productivity tracking using Strava-style accountability. Share your focus sessions and stay motivated with friends.",
+      "review": "This was a group project for CSE 403 Software Engineering. I thought the idea was really exciting: taking the core concept of Strava (fitness but social) and applying it to productivity. It was a fun project and I gained a lot of skills with databases, representing a social network in Firebase, and working with a team using good software engineering practices like CI/CD, planning, and design.",
+      "images": []
+    },
+    {
+      "id": "study-together-bot",
+      "name": "Study Together Bot",
+      "url": "https://github.com/hughgramel/study-together-bot",
+      "description": "Discord bot used by 200+ UW students for coordinating study sessions and building accountability within the community.",
+      "review": "This project was simpler but it taught me a lot about integrating the Discord API with a database and cloud computing. It also taught me about image generation with a Discord bot. It was a fun project and I got to see a lot of people actually use it on my server.",
+      "images": []
+    },
+    {
+      "id": "age-of-focus",
+      "name": "Age of Focus",
+      "url": "https://github.com/hughgramel/age-of-focus",
+      "description": "Browser-based gamified task manager where you manage a virtual historical country. Complete tasks to grow your nation, build infrastructure, and expand your empire.",
+      "review": "This project was for Cseed Buildspace, a six-week program where you build one project you really care about alongside other builders. I built Age of Focus because I was interested in both gamification and productivity, and I wanted to explore combining a productivity and task management app with gamification mechanics from the style of video game I like to play: history nation-based games where you play as a country. This project was really fun and I'm proud of the end result. I learned a lot about SVG mechanics, XML files, and how to manipulate SVGs in an efficient and scalable way.",
+      "images": []
+    },
+    {
+      "id": "vicanalyzer",
+      "name": "VicAnalyzer",
+      "url": "https://github.com/hughgramel/VicAnalyzerProject",
+      "description": "Save game analyzer for the Victoria series gaming community. Parse and visualize game data to track progress and compare statistics.",
+      "review": "This was the first side project I actually made and it taught me so much about Java programming, inheritance, text manipulation, and scraping. It showed me that I could make something useful to people around me and got me hooked on making side projects. It set me up for all the rest by teaching me how to use GitHub, how to structure Java projects, and why side projects matter.",
+      "images": []
+    },
+    {
+      "id": "uw-course-scraper",
+      "name": "UW Course Scraper",
+      "url": "https://github.com/hughgramel/uw-web-scraper",
+      "description": "Python web scraper for extracting UW course offerings. Features CLI interface, structured JSON output, and support for all departments and quarters.",
+      "review": "This was the first Python scraping project I made and it taught me a lot about web scraping tools. It showed me that I could build useful tools for UW students since there's a lot of university data out there that isn't being used well.",
+      "images": []
+    },
+    {
+      "id": "clash-of-nations",
+      "name": "(Hackathon) Clash of Nations",
+      "url": "https://github.com/hughgramel/clash-of-nations-sweccathon",
+      "description": "A mobile-first strategy simulation game where players guide a nation through real-time historical development. Built with Flutter, featuring daily tick progression, unit movement, and military front management. Designed to be cross-platform and offline-first.",
+      "review": "Built for Sweccathon, the Software Engineering Career Club's week-long hackathon. It taught me a lot about SVGs and Flutter development, and it was really fun to build.",
+      "images": []
+    }
+  ]
+}

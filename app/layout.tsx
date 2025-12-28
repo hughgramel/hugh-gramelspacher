@@ -23,8 +23,8 @@ export default function RootLayout({
       <body className={`${interTight.className} antialiased bg-white min-h-screen flex flex-col`}>
         <Header />
         <div className="flex flex-col min-h-screen">
-          <div className="pl-64"> {/* Added pl-64 wrapper */}
-            <main className="flex-1 w-full max-w-7xl px-20 py-20"> {/* Main padding remains px-12 py-20 as per snippet */}
+          <div className="pt-16 md:pt-0 md:pl-64">
+            <main className="flex-1 w-full max-w-7xl px-4 py-8 md:px-20 md:py-20">
               {children}
             </main>
           </div>
