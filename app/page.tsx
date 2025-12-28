@@ -18,7 +18,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="text-base md:text-lg leading-relaxed text-gray-800 font-light space-y-6">
+        <div className="text-lg leading-relaxed text-gray-800 space-y-6">
           <p>
             I am a CS student at the University of Washington passionate about engineering software to improve people&#39;s lives through technology and innovation.
           </p>
@@ -35,7 +35,7 @@ export default function Home() {
           <div className="pt-2 clear-both">
             <Link href="/journey" className="inline-flex items-center gap-2 group text-gray-600 hover:text-black transition-colors">
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <span className="text-lg font-light">Hugh&apos;s Journey</span>
+              <span className="text-lg text-gray-800">Hugh&apos;s Journey</span>
             </Link>
           </div>
 

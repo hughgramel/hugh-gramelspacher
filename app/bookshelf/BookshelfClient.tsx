@@ -6,6 +6,7 @@ import { X, Quote } from 'lucide-react';
 
 export interface HardcoverBook {
     title: string;
+    pages: number | null;
     image: {
         url: string;
     };
@@ -17,11 +18,21 @@ export interface HardcoverBook {
     }>;
 }
 
+export interface UserBookRead {
+    progress_pages: number | null;
+    started_at: string | null;
+    finished_at: string | null;
+    edition: {
+        pages: number | null;
+    } | null;
+}
+
 export interface UserBook {
     status_id: number;
     rating: number | null;
     review_raw: string | null;
     date_added: string;
+    user_book_reads: UserBookRead[];
     book: HardcoverBook;
 }
 
@@ -30,8 +41,8 @@ interface BookshelfClientProps {
 }
 
 const SECTIONS = [
-    { id: 3, title: 'Read' },
     { id: 2, title: 'Currently Reading' },
+    { id: 3, title: 'Read' },
     { id: 5, title: 'Did Not Finish' },
     { id: 1, title: 'Want to Read' },
 ];
@@ -75,7 +86,7 @@ export default function BookshelfClient({ initialBooks }: BookshelfClientProps) 
                             <section key={section.id} className="space-y-8">
                                 <h2 className="text-2xl font-light tracking-tight border-b border-gray-100 pb-2 flex items-baseline">
                                     {section.title}
-                                    <span className="text-2xl text-gray-300 ml-3 font-light">
+                                    <span className="text-2xl text-gray-400 ml-3 font-normal">
                                         ({sectionBooks.length})
                                     </span>
                                 </h2>
@@ -86,6 +97,12 @@ export default function BookshelfClient({ initialBooks }: BookshelfClientProps) 
                                             item.book.cached_contributors?.[0]?.name ||
                                             item.book.cached_contributors?.[0]?.author?.name ||
                                             'Unknown Author';
+
+                                        // Calculate reading progress for currently reading books
+                                        const currentRead = item.user_book_reads?.[0];
+                                        const currentPage = currentRead?.progress_pages || 0;
+                                        const totalPages = currentRead?.edition?.pages || item.book.pages || 0;
+                                        const progressPercent = totalPages > 0 ? Math.round((currentPage / totalPages) * 100) : 0;
 
                                         return (
                                             <div key={index} className="group flex flex-col space-y-3">
@@ -114,11 +131,28 @@ export default function BookshelfClient({ initialBooks }: BookshelfClientProps) 
                                                 </div>
 
                                                 {/* Text */}
-                                                <div className="space-y-1">
-                                                    <h3 className="text-base font-medium leading-tight text-gray-900 line-clamp-2 group-hover:text-black">
+                                                <div className="flex flex-col">
+                                                    {/* Fixed height area for title (2 lines max) */}
+                                                    <h3 className="text-base font-medium leading-tight text-gray-900 line-clamp-2 group-hover:text-black h-[2.5rem]">
                                                         {item.book.title}
                                                     </h3>
-                                                    <p className="text-sm text-gray-500 line-clamp-1">{authorName}</p>
+                                                    {/* Fixed height area for author (1 line) */}
+                                                    <p className="text-sm text-gray-500 line-clamp-1 h-[1.25rem]">{authorName}</p>
+
+                                                    {/* Progress bar for Currently Reading */}
+                                                    {section.id === 2 && totalPages > 0 && (
+                                                        <div className="pt-2 space-y-1">
+                                                            <div className="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                                                                <div
+                                                                    className="h-full bg-emerald-500 rounded-full transition-all"
+                                                                    style={{ width: `${progressPercent}%` }}
+                                                                />
+                                                            </div>
+                                                            <p className="text-xs text-gray-400">
+                                                                {currentPage} / {totalPages} pages ({progressPercent}%)
+                                                            </p>
+                                                        </div>
+                                                    )}
 
                                                     {section.id === 3 && item.rating && (
                                                         <div className="flex items-center gap-1 text-yellow-500 pt-1">

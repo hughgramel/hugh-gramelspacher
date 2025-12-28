@@ -1,182 +1,195 @@
 'use client';
 
-import Image from 'next/image';
-import { useEffect, useRef } from 'react';
-
-interface JourneyItem {
-    year: string;
-    title: string;
-    description: string;
-    imageSrc: string; // Using a placeholder for now
-}
-
-const journeyItems: JourneyItem[] = [
-    {
-        year: 'June 2024',
-        title: 'University of Washington',
-        description: 'Started my journey in Computer Science, diving deep into algorithms, systems, and software engineering principles.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2024',
-        title: 'Summer Internship',
-        description: 'Gained industry experience working on backend systems and cloud infrastructure.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2023',
-        title: 'First Hackathon',
-        description: 'Collaborated with a team to build a web app in 24 hours. Learned the importance of rapid prototyping and teamwork.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2023',
-        title: 'Launched First Project',
-        description: 'Deployed my first full-stack application to the web. Discovered a passion for creating tools that solve real-world problems.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2023',
-        title: 'Personal Website',
-        description: 'Designed and built my portfolio site to showcase my work and thoughts.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2022',
-        title: 'Open Source Contribution',
-        description: 'Made my first pull request to an open source library. Learned about code review and maintenance.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2022',
-        title: 'Machine Learning Course',
-        description: 'Completed a course on ML fundamentals. Built a simple image classifier.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2022',
-        title: 'High School Graduation',
-        description: 'Graduated with honors. Developed a strong foundation in mathematics and logic that serves me well in engineering.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2021',
-        title: 'Started Lifting',
-        description: 'Began my fitness journey, learning discipline and consistency through weightlifting.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2021',
-        title: 'Learned React',
-        description: 'Moved beyond vanilla JS and fell in love with component-based architecture.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2020',
-        title: 'First Custom PC',
-        description: 'Researched parts and built my own desktop computer. Sparked an interest in hardware.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2019',
-        title: 'Python Scripts',
-        description: 'Wrote simple scripts to automate daily tasks and solve math problems.',
-        imageSrc: '/hugh-v2.png',
-    },
-    {
-        year: '2018',
-        title: '"Hello, World!"',
-        description: 'Wrote my first line of code. The beginning of it all.',
-        imageSrc: '/hugh-v2.png',
-    },
-];
+import Link from 'next/link';
 
 export default function Journey() {
-    const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        observer.unobserve(entry.target); // Only animate once
-                    }
-                });
-            },
-            {
-                threshold: 0.15, // Trigger when 15% of the item is visible
-                rootMargin: '0px 0px -50px 0px', // Trigger slightly before it hits the bottom
-            }
-        );
-
-        itemsRef.current.forEach((el) => {
-            if (el) observer.observe(el);
-        });
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <div className="space-y-16">
-            <style jsx global>{`
-                .journey-item {
-                    opacity: 0;
-                    transform: translateY(40px);
-                    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-                }
-                .journey-item.in-view {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            `}</style>
-            <div>
-                <h1 className="text-4xl font-light tracking-tight mb-4">Journey</h1>
-                <p className="text-gray-500 text-lg font-light">A timeline of my professional and personal milestones.</p>
-            </div>
+        <div className="max-w-2xl">
+            {/* Header */}
+            <h1 className="text-4xl font-light tracking-tight mb-8">
+                Journey
+            </h1>
+            <p className="text-lg text-gray-800 leading-relaxed mb-4">
+                UW CS student passionate about how technology can reshape learning through startups, entrepreneurship, and building.
+            </p>
 
-            <div className="flex flex-col space-y-24 relative">
-                {/* Vertical Line (Optional - stylistic choice) */}
-                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 -translate-x-1/2 hidden md:block" />
+            {/* Current Focus */}
+            <ul className="mb-16 space-y-3 text-lg text-gray-800 leading-relaxed">
+                <li className="flex gap-4 items-start">
+                    <span className="w-2 h-2 bg-black rounded-full mt-2.5 shrink-0"></span>
+                    <span>Right now, I&apos;m building a 200+ community centered around social accountability and focusing, where social software augments productivity.</span>
+                </li>
+                <li className="flex gap-4 items-start">
+                    <span className="w-2 h-2 bg-black rounded-full mt-2.5 shrink-0"></span>
+                    <span>I&apos;m focused on learning software engineering and improving my process in building high-quality, scalable applications.</span>
+                </li>
+                <li className="flex gap-4 items-start">
+                    <span className="w-2 h-2 bg-black rounded-full mt-2.5 shrink-0"></span>
+                    <span>A good week for me is a week where I learn, grow, and live every day to the fullest.</span>
+                </li>
+            </ul>
 
-                {journeyItems.map((item, index) => (
-                    <div
-                        key={index}
-                        ref={(el) => { itemsRef.current[index] = el; }}
-                        className="flex flex-col md:flex-row items-center gap-8 md:gap-16 journey-item"
-                    >
-                        {/* Even items: Image Left, Text Right */}
-                        {index % 2 === 0 ? (
-                            <>
-                                <div className="flex-1 w-full flex justify-center md:justify-end">
-                                    <div className="w-full max-w-[320px] aspect-square bg-neutral-200 rounded-xl" />
-                                </div>
-                                <div className="flex-1 w-full text-center md:text-left pt-4 md:pt-0">
-                                    <span className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-2 block">{item.year}</span>
-                                    <h3 className="text-2xl font-light mb-4">{item.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed max-w-md mx-auto md:mx-0">
-                                        {item.description}
-                                    </p>
-                                </div>
-                            </>
-                        ) : (
-                            /* Odd items: Text Left, Image Right */
-                            <>
-                                <div className="flex-1 w-full text-center md:text-right order-2 md:order-1 pt-4 md:pt-0">
-                                    <span className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-2 block">{item.year}</span>
-                                    <h3 className="text-2xl font-light mb-4">{item.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed max-w-md mx-auto md:ml-auto md:mr-0">
-                                        {item.description}
-                                    </p>
-                                </div>
-                                <div className="flex-1 w-full flex justify-center md:justify-start order-1 md:order-2">
-                                    <div className="w-full max-w-[320px] aspect-square bg-neutral-200 rounded-xl" />
-                                </div>
-                            </>
-                        )}
+            {/* Origins */}
+            <section className="mb-16">
+                <h2 className="text-2xl font-light tracking-tight mb-4">Origins</h2>
+                <div className="space-y-4 text-lg text-gray-800 leading-relaxed">
+                    <p>
+                        When I first came to UW, I originally wanted to become a history teacher. I had a passion for education, and I saw my grandma teach for over 40 years and make a huge impact on my local community.
+                    </p>
+                    <p>
+                        However, once I got to UW, I realized that while I had a unique passion for history, it wasn&apos;t the best way to make the impact I wanted. At the same time, I took my first programming course and realized how much I loved the creative problem-solving involved and the intensity needed to write high-quality, usable code.
+                    </p>
+                    <p>
+                        I felt that was the path for me, and I could use that skill set to connect with my passion for education and learning to make software that could change the world through education.
+                    </p>
+                </div>
+            </section>
+
+            {/* Timeline */}
+            <section className="mb-16">
+                <h2 className="text-2xl font-light tracking-tight mb-8">Timeline</h2>
+
+                <div className="space-y-12">
+                    {/* December 2023 */}
+                    <div>
+                        <div className="text-sm font-semibold text-black uppercase tracking-wide mb-2">
+                            December 2023
+                        </div>
+                        <h3 className="text-xl font-medium text-black mb-3">The Switch</h3>
+                        <div className="text-lg text-gray-800 leading-relaxed space-y-3">
+                            <p>
+                                After intense reflection, I finally realized that I didn&apos;t want to continue getting my history degree. I decided to get into programming because I had always been interested in it.
+                            </p>
+                            <p>
+                                Over winter break, I studied the website for UW CSE 142 and completed all projects, allowing me to register for CSE 122, the second class in the intro series, skipping the basic introduction. At the same time, I set my sights on getting into the Allen School and registered for pre-calc, since I hadn&apos;t taken math in a couple years due to my history degree.
+                            </p>
+                        </div>
                     </div>
-                ))}
-            </div>
+
+                    {/* March 2024 - February 2025 */}
+                    <div>
+                        <div className="text-sm font-semibold text-black uppercase tracking-wide mb-2">
+                            March 2024 - February 2025
+                        </div>
+                        <h3 className="text-xl font-medium text-black mb-3">Focused on the Goal</h3>
+                        <div className="text-lg text-gray-800 leading-relaxed space-y-3">
+                            <p>
+                                Between March 2024 and February 2025, I focused entirely on school to maximize my grades and get into the Allen School.
+                            </p>
+                            <p>
+                                At the same time, I was working on personal projects including a{' '}
+                                <Link
+                                    href="https://github.com/hughgramel/VicAnalyzerProject"
+                                    target="_blank"
+                                    className="text-black font-medium underline underline-offset-2 hover:text-gray-600"
+                                >
+                                    save game analyzer
+                                </Link>
+                                {' '}that I used to provide a gaming community I had been in for many years with an easier way to see population demographics across games with 10-30 players each controlling a country.
+                            </p>
+                            <p>
+                                I was also going through The Odin Project and learning web development.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* February 2025 */}
+                    <div>
+                        <div className="text-sm font-semibold text-black uppercase tracking-wide mb-2">
+                            February 2025
+                        </div>
+                        <h3 className="text-xl font-medium text-black mb-3">Into the Allen School</h3>
+                        <div className="text-lg text-gray-800 leading-relaxed space-y-3">
+                            <p>
+                                I got into the Allen School, a year and two months after deciding to switch from history to computer science. I had to take a heavy course load to make up for time lost and graduate on time, as it was a condition of my acceptance.
+                            </p>
+                            <p>
+                                I continued side projects, leaning more into education and productivity:
+                            </p>
+                            <ul className="space-y-2 ml-4">
+                                <li>
+                                    <Link
+                                        href="https://github.com/hughgramel/uw-web-scraper"
+                                        target="_blank"
+                                        className="text-black font-medium underline underline-offset-2 hover:text-gray-600"
+                                    >
+                                        UW Web Scraper
+                                    </Link>
+                                    : Python tool for extracting UW course offerings
+                                </li>
+                                <li>
+                                    <Link
+                                        href="https://github.com/hughgramel/age-of-focus"
+                                        target="_blank"
+                                        className="text-black font-medium underline underline-offset-2 hover:text-gray-600"
+                                    >
+                                        Age of Focus
+                                    </Link>
+                                    : Browser-based gamified task manager where you manage a virtual historical country
+                                </li>
+                                <li>
+                                    <Link
+                                        href="https://read-fluent.vercel.app/"
+                                        target="_blank"
+                                        className="text-black font-medium underline underline-offset-2 hover:text-gray-600"
+                                    >
+                                        ReadFluent
+                                    </Link>
+                                    : AI-powered language learning app with EPUB support and comprehension stats
+                                </li>
+                                <li>
+                                    <Link
+                                        href="https://github.com/AmbiraDev/ambira-web"
+                                        target="_blank"
+                                        className="text-black font-medium underline underline-offset-2 hover:text-gray-600"
+                                    >
+                                        Ambira
+                                    </Link>
+                                    : Social productivity tracking using Strava-style accountability
+                                </li>
+                                <li>
+                                    <Link
+                                        href="https://github.com/hughgramel/study-together-bot"
+                                        target="_blank"
+                                        className="text-black font-medium underline underline-offset-2 hover:text-gray-600"
+                                    >
+                                        Study Together Bot
+                                    </Link>
+                                    : Discord bot used by 200+ UW students
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Looking Ahead */}
+            <section className="mb-16">
+                <h2 className="text-2xl font-light tracking-tight mb-4">Looking Ahead</h2>
+                <div className="space-y-4 text-lg text-gray-800 leading-relaxed">
+                    <p>
+                        Over the next few years, I want to improve my software engineering capabilities and skills, getting into more high-level roles at edtech startups, helping them grow and providing value through my unique insights and abilities.
+                    </p>
+                    <p>
+                        If you&apos;re someone who cares about creative problem-solving and finding unique solutions to unsolved problems, you&apos;ll probably enjoy building with me. I love getting lost in the problem and using my entire set of abilities to find ways to solve them.
+                    </p>
+                </div>
+
+                <div className="mt-8 space-y-4">
+                    <div className="bg-gray-100 rounded-lg p-5">
+                        <div className="text-sm font-semibold text-black uppercase tracking-wide mb-2">
+                            Current
+                        </div>
+                        <p className="text-lg text-gray-800">
+                            Product Management Intern at <span className="font-medium text-black">Maximal Learning</span>, an early-stage edtech startup looking to revolutionize how college students use software to manage their daily lives and productivity.
+                        </p>
+                    </div>
+
+                    <p className="text-lg text-gray-800 leading-relaxed">
+                        In 2026, I plan on furthering my skills, getting an early career position as a junior software developer, and continuing to create projects that I believe can truly impact people&apos;s lives.
+                    </p>
+                </div>
+            </section>
         </div>
     );
 }

@@ -13,15 +13,24 @@ async function getBooks(): Promise<UserBook[]> {
     {
       me {
         user_books(
-          where: {status_id: {_in: [1, 2, 3, 5]}} 
+          where: {status_id: {_in: [1, 2, 3, 5]}}
           order_by: {date_added: desc}
         ) {
           status_id
           rating
           review_raw
           date_added
+          user_book_reads {
+            progress_pages
+            started_at
+            finished_at
+            edition {
+              pages
+            }
+          }
           book {
             title
+            pages
             image {
               url
             }
@@ -76,7 +85,7 @@ export default async function Bookshelf() {
         <div className="space-y-12">
             <div className="space-y-4">
                 <h1 className="text-4xl font-light tracking-tight">Bookshelf</h1>
-                <p className="text-gray-500 text-lg font-light">
+                <p className="text-lg text-gray-800 leading-relaxed">
                     Books I've read and my thoughts on them since 2024. Tracked via <a href="https://hardcover.app" target="_blank" className="underline decoration-1 underline-offset-4 hover:opacity-70">Hardcover</a> API.
                 </p>
             </div>

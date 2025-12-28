@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'assets.hardcover.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
+      },
     ],
   },
 };
