@@ -16,18 +16,11 @@ export default function Journey() {
                 <h2 className="text-xl font-medium mb-4">
                     Current Focus
                 </h2>
-                <div className="space-y-4 text-lg leading-relaxed">
-                    <p>
-                        Product Management Intern at{' '}
-                        Maximal Learning, an early-stage edtech startup looking to revolutionize how college students use software to manage their daily lives and productivity.
-                    </p>
-                    <p>
-                        Building a 200+ community centered around social accountability and focusing, where social software augments productivity.
-                    </p>
-                    <p>
-                        Focused on learning software engineering and improving my process in building high-quality, scalable applications.
-                    </p>
-                </div>
+                <ul className="list-disc space-y-3 text-lg leading-relaxed">
+                    <li>Product Management Intern at Maximal Learning, an early-stage edtech startup looking to revolutionize how college students use software to manage their daily lives and productivity.</li>
+                    <li>Building a 200+ community centered around social accountability and focusing, where social software augments productivity.</li>
+                    <li>Focused on learning software engineering and improving my process in building high-quality, scalable applications.</li>
+                </ul>
             </section>
 
             {/* Origins */}
