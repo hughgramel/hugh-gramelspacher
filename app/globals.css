@@ -17,6 +17,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  ul.list-disc {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+  }
 }
 
 @layer utilities {

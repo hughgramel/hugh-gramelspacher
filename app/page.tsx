@@ -38,9 +38,14 @@ export default function Home() {
           <p>
             I originally came to UW to become a history teacher, inspired by my grandmother who taught for over 40 years. After taking my first programming course, I discovered a love for creative problem-solving and realized I could combine that skill set with my passion for education to build software that changes lives.
           </p>
-          <p>
-            Currently, I&#39;m a Product Management Intern at Maximal Learning, an early-stage edtech startup revolutionizing how college students manage their daily lives and productivity. I&#39;m also building a 200+ member community centered around social accountability and focusing.
-          </p>
+          <div>
+            <p className="font-medium mb-3">Current Focus</p>
+            <ul className="list-disc space-y-2">
+              <li>Product Management Intern at Maximal Learning, an early-stage edtech startup looking to revolutionize how college students use software to manage their daily lives and productivity.</li>
+              <li>Building a 200+ community centered around social accountability and focusing, where social software augments productivity.</li>
+              <li>Focused on learning software engineering and improving my process in building high-quality, scalable applications.</li>
+            </ul>
+          </div>
           <p>
             Outside of work, I enjoy reading historical literature, building side projects, and strategy games focused on history, politics, and economic systems. I also love movies and storytelling.
           </p>
