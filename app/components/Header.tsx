@@ -9,7 +9,7 @@ const navItems = [
     { name: 'Journey', path: '/journey' },
     { name: 'Projects', path: '/projects' },
     { name: 'Bookshelf', path: '/bookshelf' },
-    { name: 'Media', path: '/media' },
+    // { name: 'Media', path: '/media' },
 ];
 
 export default function Header() {

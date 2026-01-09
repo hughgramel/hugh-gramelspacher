@@ -170,10 +170,6 @@ export default function MoviesClient({ initialMedia, reviews }: MoviesClientProp
                                                             {item.title}
                                                         </div>
                                                     )}
-                                                    {/* Media type badge */}
-                                                    <div className="absolute top-1 right-1 bg-black/60 text-white text-[8px] px-1.5 py-0.5 rounded uppercase font-medium">
-                                                        {item.mediaType === 'show' ? 'TV' : 'Film'}
-                                                    </div>
                                                 </div>
 
                                                 {/* Text */}
@@ -238,10 +234,6 @@ export default function MoviesClient({ initialMedia, reviews }: MoviesClientProp
                                                 {item.media.poster_path && (
                                                     <Image src={`https://image.tmdb.org/t/p/w342${item.media.poster_path}`} fill alt="Poster" className="object-cover" unoptimized />
                                                 )}
-                                                {/* Media type badge */}
-                                                <div className="absolute top-1 right-1 bg-black/60 text-white text-[7px] px-1 py-0.5 rounded uppercase font-medium">
-                                                    {item.mediaType === 'show' ? 'TV' : 'Film'}
-                                                </div>
                                             </div>
 
                                             {/* Right: Content Stack */}
