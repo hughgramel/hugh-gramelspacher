@@ -40,7 +40,7 @@ export default function Projects() {
                                 {project.name}
                             </Link>
                         </h2>
-                        <p className="text-lg text-gray-400 font-medium">
+                        <p className="text-lg text-gray-600">
                             {project.description}
                         </p>
                         <p className="text-lg text-gray-700">
