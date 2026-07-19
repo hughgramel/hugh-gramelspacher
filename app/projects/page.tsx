@@ -26,7 +26,7 @@ export default function Projects() {
         <div className="max-w-2xl">
             <h1 className="text-4xl font-light tracking-tight mb-6">Projects</h1>
             <p className="text-lg leading-relaxed mb-12">
-                A collection of things I've built.
+                A collection of things I&apos;ve built.
             </p>
 
             <div className="space-y-12">

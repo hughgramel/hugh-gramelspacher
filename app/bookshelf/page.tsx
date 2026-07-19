@@ -86,7 +86,7 @@ export default async function Bookshelf() {
             <div className="space-y-4">
                 <h1 className="text-4xl font-light tracking-tight">Bookshelf</h1>
                 <p className="text-lg text-gray-800 leading-relaxed">
-                    Books I've read and my thoughts on them since 2024. Tracked via <a href="https://hardcover.app" target="_blank" className="underline decoration-1 underline-offset-4 hover:opacity-70">Hardcover</a> API.
+                    Books I&apos;ve read and my thoughts on them since 2024. Tracked via <a href="https://hardcover.app" target="_blank" className="underline decoration-1 underline-offset-4 hover:opacity-70">Hardcover</a> API.
                 </p>
             </div>
 

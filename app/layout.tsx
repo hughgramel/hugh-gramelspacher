@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter_Tight } from 'next/font/google';
+import { Newsreader } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import Header from './components/Header';
 
-const interTight = Inter_Tight({
+const newsreader = Newsreader({
   subsets: ['latin'],
   display: 'swap',
 });
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${interTight.className} antialiased bg-white min-h-screen flex flex-col`}>
+      <body className={`${newsreader.className} antialiased bg-white min-h-screen flex flex-col`}>
         <Header />
         <div className="flex flex-col min-h-screen">
           <div className="pt-16 md:pt-0 md:pl-64">

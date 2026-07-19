@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Site Font Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Archivo:wght@400;500;700&family=Cabin:wght@400;500;700&family=Crimson+Text:wght@400;600&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;700&family=Inter+Tight:wght@400;500;700&family=Literata:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202020;
+      --muted: #707070;
+      --line: #e7e7e7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0 56px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font: 500 28px/1.1 Inter, system-ui, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .note {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font: 400 15px/1.5 Inter, system-ui, sans-serif;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+
+    .option {
+      min-height: 315px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      border-right: 1px solid var(--line);
+      padding: 26px 22px;
+    }
+
+    .brand {
+      margin-bottom: 42px;
+      font-size: 25px;
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .nav {
+      display: grid;
+      gap: 13px;
+      font-size: 17px;
+      line-height: 1.15;
+    }
+
+    .nav span:first-child {
+      font-weight: 700;
+    }
+
+    .content {
+      padding: 26px;
+    }
+
+    .label {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font: 500 12px/1 Inter, system-ui, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .sample-title {
+      margin: 0 0 16px;
+      font-size: 30px;
+      line-height: 1.04;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .sample-copy {
+      margin: 0;
+      max-width: 32ch;
+      color: #4a4a4a;
+      font-size: 17px;
+      line-height: 1.48;
+    }
+
+    .inter-tight { font-family: "Inter Tight", Inter, system-ui, sans-serif; }
+    .ibm-plex { font-family: "IBM Plex Sans", Inter, system-ui, sans-serif; }
+    .dm-sans { font-family: "DM Sans", Inter, system-ui, sans-serif; }
+    .archivo { font-family: "Archivo", Inter, system-ui, sans-serif; }
+    .cabin { font-family: "Cabin", Inter, system-ui, sans-serif; }
+    .alegreya { font-family: "Alegreya Sans", Inter, system-ui, sans-serif; }
+    .newsreader { font-family: "Newsreader", Georgia, serif; }
+    .source-serif { font-family: "Source Serif 4", Georgia, serif; }
+    .literata { font-family: "Literata", Georgia, serif; }
+    .crimson { font-family: "Crimson Text", Georgia, serif; }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 24px, 520px);
+        padding-top: 28px;
+      }
+
+      .option {
+        grid-template-columns: 116px 1fr;
+      }
+
+      .sidebar,
+      .content {
+        padding: 22px 18px;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Font Options</h1>
+    <p class="note">Ten white-background sidebar samples using the personal website navigation component.</p>
+    <section class="grid" aria-label="Font options">
+      <article class="option inter-tight">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">Inter Tight</div><h2 class="sample-title">About</h2><p class="sample-copy">A compact, current sans with clean rhythm. Closest to the live site, but slightly more editorial than plain Inter.</p></div>
+      </article>
+      <article class="option ibm-plex">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">IBM Plex Sans</div><h2 class="sample-title">About</h2><p class="sample-copy">Technical without feeling cold. Strong for a CS student site that still wants a calm personal tone.</p></div>
+      </article>
+      <article class="option dm-sans">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">DM Sans</div><h2 class="sample-title">About</h2><p class="sample-copy">Friendly and readable, with softer shapes. Good if you want the site to feel more approachable.</p></div>
+      </article>
+      <article class="option archivo">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">Archivo</div><h2 class="sample-title">About</h2><p class="sample-copy">More assertive and condensed. It gives the sidebar a confident, portfolio-like presence.</p></div>
+      </article>
+      <article class="option cabin">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">Cabin</div><h2 class="sample-title">About</h2><p class="sample-copy">Warm, simple, and practical. It keeps the site personal without pushing too hard stylistically.</p></div>
+      </article>
+      <article class="option alegreya">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">Alegreya Sans</div><h2 class="sample-title">About</h2><p class="sample-copy">Humanist and bookish. A good bridge between software, history, reading, and storytelling.</p></div>
+      </article>
+      <article class="option newsreader">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">Newsreader</div><h2 class="sample-title">About</h2><p class="sample-copy">Literary and distinctive. Best if you want the writing and bookshelf sections to lead the identity.</p></div>
+      </article>
+      <article class="option source-serif">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">Source Serif 4</div><h2 class="sample-title">About</h2><p class="sample-copy">Classic but restrained. It reads well for longer biography, essays, and project explanations.</p></div>
+      </article>
+      <article class="option literata">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">Literata</div><h2 class="sample-title">About</h2><p class="sample-copy">Serious and scholarly, with a bit more texture. Strong for history, essays, and reading notes.</p></div>
+      </article>
+      <article class="option crimson">
+        <aside class="sidebar"><div class="brand">Hugh<br>Gramelspacher</div><nav class="nav"><span>About</span><span>Projects</span><span>Bookshelf</span></nav></aside>
+        <div class="content"><div class="label">Crimson Text</div><h2 class="sample-title">About</h2><p class="sample-copy">Traditional and academic. It changes the site from minimal tech portfolio to personal essay space.</p></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

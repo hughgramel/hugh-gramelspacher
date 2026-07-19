@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Linkedin, Github, Mail, ArrowRight } from 'lucide-react';
+import { Linkedin, Github, Mail } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       {/* Mobile: image on top */}
       <div className="md:hidden flex justify-center mb-6">
         <Image
-          src="/hugh-v2.png"
+          src="/home-photo.jpg"
           alt="Hugh Gramelspacher"
           width={280}
           height={280}
@@ -22,7 +22,7 @@ export default function Home() {
       <div className="block">
         <div className="relative float-right ml-8 mb-2 w-[280px] hidden md:block">
           <Image
-            src="/hugh-v2.png"
+            src="/home-photo.jpg"
             alt="Hugh Gramelspacher"
             width={280}
             height={280}
@@ -32,24 +32,17 @@ export default function Home() {
         </div>
         <div className="text-lg leading-relaxed text-gray-800 space-y-6">
           <p>
-            I am a CS student at the University of Washington passionate about building software through startups, entrepreneurship, and creative problem-solving.
+            I&apos;m a CS student at the University of Washington interested in software, startups, and the way technology changes how people learn, work, and make decisions.
           </p>
           <p>
-            I originally came to UW to become a history teacher, inspired by my grandmother who taught for over 40 years. After taking my first programming course, I discovered a love for creative problem-solving and realized I could use that skill set to build software that changes lives.
+            I came to UW planning to become a history teacher. My grandmother taught for more than 40 years, and I grew up around the idea that a good teacher can change the direction of someone&apos;s life. After taking my first programming course, I found a different way into the same impulse: building tools that help people understand, create, or do something they couldn&apos;t do before.
           </p>
           <p>
-            Outside of work, I enjoy reading historical literature, building side projects, and strategy games focused on history, politics, and economic systems. I also love movies and storytelling.
+            Most of my time now goes toward building software, reading, and exploring ideas around education, language, history, and entrepreneurship. I like projects that combine clear thinking with practical execution.
           </p>
           <p>
-            Feel free to reach out to me online!
+            Outside of work, I read historical literature, build side projects, watch movies, and play strategy games about history, politics, and economic systems.
           </p>
-
-          <div className="pt-2 clear-both">
-            <Link href="/story" className="inline-flex items-center gap-2 group text-gray-600 hover:text-black transition-colors">
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              <span className="text-lg text-gray-800">Story</span>
-            </Link>
-          </div>
 
           <div className="pt-4 flex flex-col items-start gap-4 text-gray-500 text-sm md:text-base clear-both">
 
